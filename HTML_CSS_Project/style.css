@@ -1,0 +1,38 @@
+h1{
+    text-align: center;
+}
+fieldset legend{
+font-weight: bold;
+}
+fieldset{
+    margin: 6px;
+}
+label.files{
+    background-color: red;
+    color: white;
+    border-style: none;
+    text-decoration: none;
+}
+label.files:hover{
+    cursor: pointer;
+}
+
+input.sub_btn:hover{
+    cursor: pointer;
+}
+input[type="file"]{
+    display: none;
+}
+ .sub{
+    display:flex;
+    justify-content:center;
+    
+  }
+  input.sub_btn{
+      background-color: red;
+      color: white;
+      border-style: none;
+      text-decoration: none;
+      
+  }
+

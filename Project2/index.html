@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>work to dos</h1>
+    <p class="yell">Enter text into the input field to add items to your list.</p>
+    <p class="green">Click the item to mark it as complete.</p>
+    <p class="blue">Click the "X" to remove the item from your list.</p>
+   
+    <input type="text" id="New" placeholder="New item..." class="New">
+    <button  id="btn" onclick="newItem()" class="btn">🖉</button>
+    <p>
+    <ul id="newlist">
+        <li class="item">items 1<button onclick="alfa()" class="close">x</button></li>
+        <li class="item">items 2<button onclick="alfa()" class="close">x</button></li>
+        <li class="item">items 3<button onclick="alfa()" class="close">x</button></li>
+    </ul>
+   </p>
+   
+</body>
+</html>

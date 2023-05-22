@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+    <title>Permission Application</title>
+</head>
+<body>
+   <h1>Application For Permission To Date My Daughter</h1> 
+   <p><strong>Note:</strong>Form is to be completed at least 21 days prior to date</p>
+   <form action="#">
+    <fieldset>
+        <legend>Personal Details</legend>
+    <label for="name">Name:</label> <input type="text" name="name" id="name" placeholder="Enter name here"><br/><br/>
+   <label for="address">Address:</label> <input type="text" name="address" id="address" placeholder="Enter address here"><br/><br/>
+   <label for="E_mail">Email:</label> <input type="email" name="E_mail" id="Email" placeholder="Enter email here"><br/><br/>
+   <label for="phoneNumber">Phone Number:</label> <input type="tel" name="phoneNumber" id="phoneNumber" maxlength="10" placeholder="Enter 10 digit number" ><br/><br/>
+   <label for="IQ">IQ:</label> <input type="number" name="IQ" id="IQ" maxlength="3" placeholder="Enter IQ here"><br/><br/>
+    <p>Gender</p>
+    <p>
+        <input type="radio" name="Gender" id="Male"  value="Male" checked><label for="Male">Male</label><br/>
+        <input type="radio" name="Gender" id="Female" value="Female"><label for="Female">Female</label><br/>
+        <input type="radio" name="Gender" id="Other" value="Other"><label for="Other">Other</label><br/>
+    </p> 
+    Date of Proposed Outing: <input type="date" name="date" id="date">
+    </fieldset>
+    <fieldset>
+        <p>Check All That Apply</p>
+        <input type="checkbox" name="option" id="tattoos" value="tattoos"><label for="tattoos">I have tattoos and/or piercings</label><br/>
+        <input type="checkbox" name="option" id="age" value="age"><label for="age">I am more than 2 years older than my daughter</label><br/>
+        <input type="checkbox" name="option" id="vehicle"value="vehicle" ><label for="vehicle">I own a panel van or V8 ute</label><br/>
+        <input type="checkbox" name="option" id="work" value="work" checked><label for="work">I work full-time</label><br/>
+        <input type="checkbox" name="option" id="parents" value="parents" checked><label for="parents">My parents are rich</label><br/>
+        <input type="checkbox" name="option" id="public_place" value="public_place" checked><label for="public_place">Is the date a well public location</label><br/>
+    </fieldset>
+    <fieldset>
+        <label>Political Persuasion:</label>
+        <select name="political_Persuasion">
+            <option selected>left Wing</option>
+            <option>none</option>
+       </select>
+       <label>Education Level Completed:</label>
+       <select name="Education">
+        <option selected>University</option>
+        <option>high school</option>
+        <option>Complementary school</option>
+        <option>Elementery school</option>
+   </select>
+    </fieldset>
+    <fieldset>
+        <legend>Essay Section</legend>
+        <p>In 50 words or more explain why you want to date my daughter</p>
+      <textarea name="reason" id="reason" cols="40" rows="7" placeholder="Enter text here" minlength="50w"></textarea>
+    <p>Please upload contact details for 2 references<br/>
+        <textarea name="details" id="details" cols="40" rows="7"  placeholder="Enter text here"></textarea>
+    </p>
+    <p>Upload Police Clearance Certificate, Bank Statement and Medical Certifiates here: <label class="files" for="file">Attach Files</label> <input type="file" name="file" id="file" multiple="2">
+    </fieldset>
+ 
+    <p class="sub"><input class="sub_btn" type="submit" value="Send Your Application" >
+    </p>
+   </form>
+ 
+</body>
+</html>
