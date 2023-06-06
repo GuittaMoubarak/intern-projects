@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top py-2 fixed-top">
+    <a class="navbar-brand text-secondary px-3" href="#">To-Do List</a>
+</nav>
+<div class="container-fluid col-9">
+  <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+    <form action="" method="POST" class="d-flex ">
+    </div>
+    {% csrf_token %} {{form.as_p}}
+  </div>
+<div class="text-center">
+    <button class="btn btn-secondary mb-3 ms-2" type="submit" name="save">Add Task</button>
+</div>
+  </form>
+     {%if tasks %}
+     <div class="border border-info px-5 pb-4 rounded">
+      <legend class="text-secondary">your tasks for today</legend>
+     <ul class="list-group">
+    
+       {% for t in tasks %}
+       {%if t.checked%}
+        <li class="list-group-item d-flex justify-content-between align-items-center text-decoration-line-through text-danger">
+        {%else%}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          {%endif%}
+        {{t.title}}
+         <span class="d-inline">
+     <div> <form action="remove/{{t.id}}" method="POST" class="d-inline">
+        {% csrf_token %}
+       
+         <button type="submit" class="btn btn-dark rounded-pill">Remove</button>  
+        </form>
+      </div>
+     <div class="d-inline"> <form action="check/{{t.id}}" method="POST"  >
+        {% csrf_token %}
+        {%if t.checked%}
+         <button type="submit" class="btn btn-dark rounded-pill">Uncheck</button>  
+         {%else%}
+         <button type="submit" class="btn btn-danger rounded-pill ">Check</button>
+         {%endif%}
+        </form>
+      </div>
+      </span>
+      </li>
+      {%endfor%}
+      
+      </ul>
+    <div>
+          {% else %}
+          <font color="red">no tasks for today</font> 
+          {%endif%}
+        </div>
+</div>
+
+</body>
+{% endblock %}

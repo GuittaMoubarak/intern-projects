@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top py-2 fixed-top">
+    <a class="navbar-brand text-secondary px-3" href="#">Password Storage</a>
+</nav>
+
+<div class="container-fluid ">
+    <div class="row">
+    <table class="table" >
+        <tr>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Add Date</th>
+        <th>Delete</th>
+        </tr>
+    {%if pass%}
+    {%for p in pass%}
+    
+        <tr>
+            <td>{{p.email}}</td>
+            <td>{{p.password}}</td>
+            <td>{{p.addDate}}</td>
+            <td><form action="remove/{{p.id}}" method="POST">
+                {% csrf_token %}
+               
+                 <button type="submit" class="btn btn-dark rounded ">Delete</button>  
+                </form> </td>
+        </tr>
+      
+    {% endfor %}
+    {% endif %}
+</table>
+<div class="text-center">
+    <a href="{% url 'password:Add' %}"><button class="btn btn-dark">Add Password</button></a>
+</div>
+</body>
+{%endblock%}

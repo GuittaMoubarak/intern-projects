@@ -1,0 +1,128 @@
+{% extends 'base.html' %} {% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Tools</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'converter:index' %}">Text-To-HTML</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'password:index' %}">Password Storage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ToDo:index' %}">To-Do App</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'weather:index' %}">Weather</a>
+        </li>
+        {%if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'user_auth:logout' %}">Logout</a>
+        </li>
+
+
+        {%else%}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'user_auth:user_register' %}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'user_auth:index' %}">Login</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class= "container">
+  {% if messages %}
+  {% for message in messages %}
+  <div class ="alert alert-warning alert-dismissible fade show" role="alert">
+  {{message}}
+  <button type = "button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+  </div>
+  {% endfor %}
+  {% endif %}
+</div> 
+<div class="container my-5 "><h4 class="text-secondary">App Description:</h4>
+<p>Tools is a designed application to simplify your daily tasks.
+  This application covers 4 essential tools:
+
+</p>
+
+<div class="accordion" id="chapters">
+  <div class="accordion-item">
+      <h2 class="accordion-header" id="heading-1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-1" aria-expanded="true"
+          aria-controls="chapter-1">
+          Text-To-Html</button>
+      </h2>
+      <div id="chapter-1" class="accordion-collapse collapse show" aria-labelledby="heading-1" data-bs-parent="#chapters">
+          <div class="accordion-body">
+              <p>Convert plain text into HTML markup. it includes many formatting Options such as:<br>
+         line breaks, convert special characters to their HTML entities, and control the use of tags.</p>
+          </div>
+      </div>
+  </div>
+  <div class="accordion-item">
+      <h2 class="accordion-header" id="heading-2">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-2" aria-expanded="true"
+          aria-controls="chapter-2">
+          Password Storage</button>
+      </h2>
+      <div id="chapter-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#chapters">
+          <div class="accordion-body">
+              <p>A tool that store in the database the password with its email and username. and gives the user the ability to remove or add a password field. </p>
+         
+          </div>
+      </div>
+  </div>
+  <div class="accordion-item">
+      <h2 class="accordion-header" id="heading-3">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-3" aria-expanded="true"
+          aria-controls="chapter-3">
+          To-Do App</button>
+      </h2>
+      <div id="chapter-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#chapters">
+          <div class="accordion-body">
+              <p>Task Creation and Modification: add task, display tasks of the same day, chack the task that is done and remove unnecessary tasks.</p>
+         
+          </div>
+      </div>
+  </div>
+  <div class="accordion-item">
+      <h2 class="accordion-header" id="heading-4">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-4" aria-expanded="true"
+          aria-controls="chapter-4">
+          Weather</button>
+      </h2>
+      <div id="chapter-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#chapters">
+          <div class="accordion-body">
+              <p>provides users with accurate and up-to-date weather information:<br>
+              
+                real-time weather updates
+                hourly and daily forecasts
+              </p>
+         
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

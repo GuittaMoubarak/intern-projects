@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top py-2 fixed-top">
+        <a class="navbar-brand text-secondary px-3" href="#">Weather App</a>
+    </nav>
+    <br />
+    <br />
+    <div class="container-fluid col-9">
+      <form method="Post" >
+        {% csrf_token %}
+        <div class="input-group">
+          <input type="text" class="form-control" name="city" placeholder="Search">
+          <div class="input-group-btn">
+            <button class="btn btn-dark" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+          <form>
+          </div>
+    <div class="container-fluid col-6 text-center">
+      {% if country_code and coordinate and temp and pressure and humidity %}
+      
+        <h3 class="bg-secondary rounded text-light m-3">country code : {{country_code}}</h1>
+            <div class="bg-light">
+          <h5>coordinate : {{coordinate}}</h5>
+          <h5>temp : {{temp}}</h5>
+          <h5>pressure : {{pressure}} </h5>
+          <h5>humidity : {{humidity}}</h5>
+            </div>
+      {% endif %}
+    </div>
+  </body>
+  {% endblock %}
